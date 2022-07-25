@@ -1447,7 +1447,7 @@
   "sourceMap": "315:674:1:-:0;;;452:56;;;;;;;;;-1:-1:-1;486:9:1;477:8;:19;;;;;;;;;;499:5;477:27;;315:674;;;;;;",
   "deployedSourceMap": "315:674:1:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;778:117;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;511:264;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;898:89::-;;;;;;:::i;:::-;;:::i;778:117::-;837:4;853:10;:18;872:16;883:4;872:10;:16::i;:::-;889:1;853:38;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;846:45;;778:117;;;;:::o;511:264::-;609:10;575:15;600:20;;;;;;;;;;;:29;-1:-1:-1;596:47:1;;;-1:-1:-1;638:5:1;631:12;;596:47;656:10;647:8;:20;;;;;;;;;;:30;;671:6;;647:8;:30;;671:6;;647:30;:::i;:::-;;;;-1:-1:-1;;;;;;;681:18:1;;:8;:18;;;;;;;;;;:28;;703:6;;681:8;:28;;703:6;;681:28;:::i;:::-;;;;-1:-1:-1;;718:38:1;;-1:-1:-1;;;;;718:38:1;;;727:10;;718:38;;;;749:6;;718:38;:::i;:::-;;;;;;;;-1:-1:-1;767:4:1;511:264;;;;;:::o;898:89::-;-1:-1:-1;;;;;969:14:1;952:4;969:14;;;;;;;;;;;;898:89::o;14:175:4:-;84:20;;-1:-1:-1;;;;;133:31:4;;123:42;;113:2;;179:1;176;169:12;194:198;;306:2;294:9;285:7;281:23;277:32;274:2;;;327:6;319;312:22;274:2;355:31;376:9;355:31;:::i;:::-;345:41;264:128;-1:-1:-1;;;264:128:4:o;397:266::-;;;526:2;514:9;505:7;501:23;497:32;494:2;;;547:6;539;532:22;494:2;575:31;596:9;575:31;:::i;:::-;565:41;653:2;638:18;;;;625:32;;-1:-1:-1;;;484:179:4:o;668:194::-;;791:2;779:9;770:7;766:23;762:32;759:2;;;812:6;804;797:22;759:2;-1:-1:-1;840:16:4;;749:113;-1:-1:-1;749:113:4:o;867:187::-;1032:14;;1025:22;1007:41;;995:2;980:18;;962:92::o;1059:177::-;1205:25;;;1193:2;1178:18;;1160:76::o;1241:264::-;1431:25;;;1487:2;1472:18;;1465:34;1419:2;1404:18;;1386:119::o;1510:128::-;;1581:1;1577:6;1574:1;1571:13;1568:2;;;1587:18;;:::i;:::-;-1:-1:-1;1623:9:4;;1558:80::o;1643:125::-;;1711:1;1708;1705:8;1702:2;;;1716:18;;:::i;:::-;-1:-1:-1;1753:9:4;;1692:76::o;1773:127::-;1834:10;1829:3;1825:20;1822:1;1815:31;1865:4;1862:1;1855:15;1889:4;1886:1;1879:15",
   "source": "pragma solidity ^0.8.1;\n\nimport \"./ConvertLib.sol\";\n\n// This is just a simple example of a coin-like contract.\n// It is not standards compatible and cannot be expected to talk to other\n// coin/token contracts. If you want to create a standards-compliant\n// token, see: https://github.com/ConsenSys/Tokens. Cheers!\n\ncontract MetaCoin {\n\tmapping (address => uint) balances;\n\n\tevent Transfer(address indexed _from, address indexed _to, uint256 _value);\n\n\tconstructor() public {\n\t\tbalances[tx.origin] = 10000;\n\t}\n\n\tfunction sendCoin(address receiver, uint amount) public returns(bool sufficient) {\n\t\tif (balances[msg.sender] < amount) return false;\n\t\tbalances[msg.sender] -= amount;\n\t\tbalances[receiver] += amount;\n\t\temit Transfer(msg.sender, receiver, amount);\n\t\treturn true;\n\t}\n\n\tfunction getBalanceInEth(address addr) public view returns(uint){\n\t\treturn ConvertLib.convert(getBalance(addr),2);\n\t}\n\n\tfunction getBalance(address addr) public view returns(uint) {\n\t\treturn balances[addr];\n\t}\n}\n",
-  "sourcePath": "/Users/jacekstaszynski/Workspace/private/my-app/contracts/MetaCoin.sol",
+  "sourcePath": "/Users/jacekstaszynski/Workspace/private/developer-verifier/contracts/MetaCoin.sol",
   "ast": {
     "absolutePath": "project:/contracts/MetaCoin.sol",
     "exportedSymbols": {
@@ -2604,9 +2604,18 @@
     "name": "solc",
     "version": "0.8.1+commit.df193b15.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {
+        "ConvertLib": "0x6890026Cb5507A3c3e475584F37B455c110e69c4"
+      },
+      "address": "0x2829B3b486824c9bE4F972068608Ade2e66E9fC7",
+      "transactionHash": "0xc277e5cc6a61a4a6c4916786712718465c3146cb0fd4b258794cffbf1ca159f5"
+    }
+  },
   "schemaVersion": "3.4.8",
-  "updatedAt": "2022-07-13T05:31:08.401Z",
+  "updatedAt": "2022-07-25T05:56:21.462Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

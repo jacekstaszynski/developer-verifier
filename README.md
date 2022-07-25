@@ -6,6 +6,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+## LOCAL DEVELOPMENT
+
+1. create .env file with parameters:
+   - memonic=wallet menmonic 12 words
+   -
+
 ### `npm start`
 
 Runs the app in the development mode.\

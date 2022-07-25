@@ -281,7 +281,7 @@
   "sourceMap": "57:176:3:-:0;;;;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "57:176:3:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;104:53;;;;;;:::i;:::-;;:::i;:::-;;161:70;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;104:53;138:10;:14;104:53::o;161:70::-;197:4;216:10;161:70;:::o;14:190:4:-;;126:2;114:9;105:7;101:23;97:32;94:2;;;147:6;139;132:22;94:2;-1:-1:-1;175:23:4;;84:120;-1:-1:-1;84:120:4:o;209:177::-;355:25;;;343:2;328:18;;310:76::o",
   "source": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.1;\n\ncontract SimpleStorage {\n  uint storedData;\n\n  function set(uint x) public {\n    storedData = x;\n  }\n\n  function get() public view returns (uint) {\n    return storedData;\n  }\n}\n",
-  "sourcePath": "/Users/jacekstaszynski/Workspace/private/my-app/contracts/SimpleStorage.sol",
+  "sourcePath": "/Users/jacekstaszynski/Workspace/private/developer-verifier/contracts/SimpleStorage.sol",
   "ast": {
     "absolutePath": "project:/contracts/SimpleStorage.sol",
     "exportedSymbols": {
@@ -535,9 +535,16 @@
     "name": "solc",
     "version": "0.8.1+commit.df193b15.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x56e532DCB355141D91DdEA538397C683E74fa6E9",
+      "transactionHash": "0x7f633e7e9b68dedd3ef5880a2072f0ecf95b9cbb590c7b586f5fa63db7ea8c24"
+    }
+  },
   "schemaVersion": "3.4.8",
-  "updatedAt": "2022-07-13T05:31:08.428Z",
+  "updatedAt": "2022-07-25T05:56:21.497Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

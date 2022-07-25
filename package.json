@@ -1,5 +1,5 @@
 {
-  "name": "react-truffle-template",
+  "name": "developer-verifier",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -34,10 +34,13 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "@truffle/hdwallet-provider": "^1.5.1",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.11.43",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
+    "bip39": "^3.0.4",
+    "dotenv": "^16.0.1",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
