@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Example from "./components/Example";
+import { ethers } from "ethers";
 
-function App() {
+const App = () => {
+  const [hasMetamask, setHasMetamask] = useState(false);
   return (
     <div>
-      <h1>Learn React</h1>
       <Example />
     </div>
   );
-}
+};
 
 export default App;
