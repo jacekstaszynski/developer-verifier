@@ -1,4 +1,3 @@
-// SPDX-License-Identifier: UNLICENCES 
 pragma solidity ^0.8.1;
 contract SimpleStorage {
   uint storedData;
