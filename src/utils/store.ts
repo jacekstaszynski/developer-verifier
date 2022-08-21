@@ -1,6 +1,6 @@
 import React, { createContext, Dispatch, SetStateAction } from "react";
 import Web3 from "web3";
-import SmartContract from "../../abis/DeveloperVerifier.json";
+import SmartContract from "../abis/DeveloperVerifier.json";
 import { AbiItem } from "web3-utils";
 import type { Contract } from "web3-eth-contract";
 
@@ -37,7 +37,7 @@ const contract = new web3.eth.Contract(SmartContract.abi as AbiItem[], address);
 export const initialState: IState = {
   web3: web3,
   contract: contract,
-  email: "a@b.com",
+  email: "TBD",
   account: "",
   accountId: null,
   accountType: "",

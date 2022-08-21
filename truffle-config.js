@@ -4,7 +4,7 @@ const MNEMONIC = process.env.MNEMONIC;
 
 module.exports = {
   contracts_directory: "./contracts/",
-  contracts_build_directory: "./abis/",
+  contracts_build_directory: "./src/abis/",
   networks: {
     development: {
       host: "localhost",

@@ -1,12 +1,20 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Example from "./components/Example";
 import { ethers } from "ethers";
+import { ICtx, initialState, StoreContext } from "./utils/store";
+import { Router } from "react-router-dom";
+import Web3 from "web3";
+import Navbar from "./components/Navbar";
 
 const App = () => {
-  const [hasMetamask, setHasMetamask] = useState(false);
+  const [state, setState] = useState(initialState);
+
   return (
     <div>
-      <Example />
+      <StoreContext.Provider value={{ state, setState }}>
+        <Navbar />
+        <Example />
+      </StoreContext.Provider>
     </div>
   );
 };
